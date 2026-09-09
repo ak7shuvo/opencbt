@@ -47,6 +47,18 @@ const principles = [
   },
 ];
 
+/* Two-column section layouts on this page share two reusable ratios
+   instead of a one-off value per section:
+     - 0.7fr_1.3fr  "wide split"     — short label/eyebrow column next to
+                                        a wider text column (Intro, Who
+                                        decides, Principles)
+     - 0.9fr_1.1fr  "balanced split" — near-even visual/copy pairing,
+                                        used both ways round depending on
+                                        which side carries the visual
+                                        (Hero: 1.1fr_0.9fr, Heritage:
+                                        0.9fr_1.1fr)
+   The Impact section's 1fr_auto is a heading-plus-link layout, not a
+   two-content split, so it isn't part of this scale. */
 export default function Home() {
   return (
     <>
@@ -66,20 +78,20 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28 lg:py-32">
-          <div className="grid items-center gap-16 lg:grid-cols-[1.12fr_0.88fr] lg:gap-20">
+        <div className="mx-auto max-w-6xl px-6 section-py-hero">
+          <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
 
             {/* Hero copy */}
             <div className="max-w-3xl">
               <div className="mb-7 flex items-center gap-3 animate-fade-up">
                 <span className="h-px w-10 bg-forest/40" />
-                <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest/70">
+                <span className="text-xs font-medium uppercase tracking-[0.3em] text-forest/70">
                   Community · Culture · Nature
                 </span>
               </div>
 
               <h1
-                className="font-display text-5xl leading-[0.96] tracking-tight text-forest sm:text-6xl lg:text-[5.25rem] animate-fade-up"
+                className="font-display text-5xl leading-[0.96] tracking-tight text-forest sm:text-6xl lg:text-7xl animate-fade-up"
                 style={{ animationDelay: "100ms" }}
               >
                 Some places are not
@@ -200,7 +212,7 @@ export default function Home() {
 
                     <div className="mx-auto mt-7 h-px w-10 bg-forest/30" />
 
-                    <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-forest/50">
+                    <p className="mt-4 text-xs uppercase tracking-[0.3em] text-forest/50">
                       Sylhet · Bangladesh
                     </p>
                   </div>
@@ -208,7 +220,7 @@ export default function Home() {
               </div>
 
               <div className="absolute -bottom-1 left-0 rounded-sm border border-forest/10 bg-sand/95 px-5 py-4 shadow-lg backdrop-blur-md animate-float">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-ink/40">
+                <p className="text-xs uppercase tracking-[0.2em] text-ink/40">
                   The OpenCBT idea
                 </p>
                 <p className="mt-1 font-display text-lg text-forest">
@@ -216,7 +228,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="absolute right-0 top-0 rounded-full border border-forest/15 bg-sand/90 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-forest shadow-sm backdrop-blur-md animate-pulse-soft">
+              <div className="absolute right-0 top-0 rounded-full border border-forest/15 bg-sand/90 px-4 py-2 text-xs uppercase tracking-[0.15em] text-forest shadow-sm backdrop-blur-md animate-pulse-soft">
                 Local · Responsible · Human
               </div>
             </div>
@@ -242,7 +254,7 @@ export default function Home() {
                 <p className="font-display text-2xl text-forest">
                   0{index + 1}
                 </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-ink/45">
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-ink/45">
                   {item}
                 </p>
               </div>
@@ -255,10 +267,10 @@ export default function Home() {
           INTRO
       ========================================================== */}
       <section className="section-bleed bg-forest text-sand">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-sand/50">
+              <p className="text-xs uppercase tracking-[0.3em] text-sand/50">
                 Why OpenCBT
               </p>
             </div>
@@ -287,10 +299,10 @@ export default function Home() {
           EXPLORE CARDS
       ========================================================== */}
       <section className="section-bleed bg-sand">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+              <p className="text-xs uppercase tracking-[0.3em] text-forest/50">
                 Start your journey
               </p>
 
@@ -341,7 +353,7 @@ export default function Home() {
           HERITAGE
       ========================================================== */}
       <section className="section-bleed border-y border-forest/10 bg-[#eee7d8]">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
             <div className="relative min-h-[360px] overflow-hidden border border-forest/10 bg-sand/60">
@@ -359,7 +371,7 @@ export default function Home() {
                     <span className="italic text-forest/55">heritage.</span>
                   </p>
 
-                  <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-forest/45">
+                  <p className="mt-5 text-xs uppercase tracking-[0.25em] text-forest/45">
                     Stories · Skills · Traditions
                   </p>
                 </div>
@@ -367,7 +379,7 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+              <p className="text-xs uppercase tracking-[0.3em] text-forest/50">
                 Heritage & Culture
               </p>
 
@@ -403,10 +415,10 @@ export default function Home() {
           GOVERNANCE
       ========================================================== */}
       <section className="section-bleed border-y border-forest/10 bg-sand">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-6 section-py-compact">
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:items-center">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+              <p className="text-xs uppercase tracking-[0.3em] text-forest/50">
                 Who decides
               </p>
               <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">
@@ -435,9 +447,9 @@ export default function Home() {
           COMMUNITY
       ========================================================== */}
       <section className="section-bleed bg-sand">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="max-w-2xl">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+            <p className="text-xs uppercase tracking-[0.3em] text-forest/50">
               The people behind the place
             </p>
 
@@ -464,7 +476,7 @@ export default function Home() {
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border border-sand/10 transition-transform duration-700 group-hover:scale-125" />
 
               <div className="relative flex h-full flex-col justify-between">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-sand/45">
+                <span className="text-xs uppercase tracking-[0.25em] text-sand/45">
                   Communities
                 </span>
 
@@ -487,7 +499,7 @@ export default function Home() {
               className="group relative min-h-[260px] overflow-hidden border border-forest/10 bg-[#eee7d8] p-8 text-forest transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative flex h-full flex-col justify-between">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-forest/45">
+                <span className="text-xs uppercase tracking-[0.25em] text-forest/45">
                   Homestays
                 </span>
 
@@ -518,10 +530,10 @@ export default function Home() {
           PRINCIPLES
       ========================================================== */}
       <section className="section-bleed border-y border-forest/10 bg-forest text-sand">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-sand/45">
+              <p className="text-xs uppercase tracking-[0.3em] text-sand/45">
                 Our approach
               </p>
 
@@ -560,10 +572,10 @@ export default function Home() {
           IMPACT
       ========================================================== */}
       <section className="section-bleed bg-sand">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-6 section-py-regular">
           <div className="grid items-end gap-12 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+              <p className="text-xs uppercase tracking-[0.3em] text-forest/50">
                 Beyond the journey
               </p>
 
@@ -603,7 +615,7 @@ export default function Home() {
                 <p className="font-display text-3xl text-forest">
                   {number}
                 </p>
-                <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-ink/45">
+                <p className="mt-2 text-xs uppercase tracking-[0.18em] text-ink/45">
                   {label}
                 </p>
               </div>
@@ -631,8 +643,8 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-forest/45">
+        <div className="relative mx-auto max-w-5xl px-6 text-center section-py-emphasis">
+          <p className="text-xs uppercase tracking-[0.3em] text-forest/45">
             Your next story starts here
           </p>
 

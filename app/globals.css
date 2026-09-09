@@ -104,6 +104,76 @@ body {
   margin-right: calc(50% - 50vw);
 }
 
+/* ---------------------------------------------------------------------
+   Homepage vertical-rhythm scale
+   ---------------------------------------------------------------------
+   Named, reusable padding steps for the homepage's full-bleed sections,
+   instead of each section carrying its own one-off py-* values. Three
+   named sizes, used deliberately:
+     - .section-py-hero     the opening section, slightly taller than the
+                             rest so the page has room to breathe first
+     - .section-py-regular  the default for most content sections
+     - .section-py-compact  for shorter, denser, secondary sections (e.g.
+                             "Who decides") that don't need full-height
+                             padding
+     - .section-py-emphasis the closing CTA, deliberately the tallest to
+                             give the final call-to-action room to land
+   ------------------------------------------------------------------- */
+.section-py-hero {
+  padding-top: theme("spacing.20");
+  padding-bottom: theme("spacing.20");
+}
+.section-py-regular {
+  padding-top: theme("spacing.20");
+  padding-bottom: theme("spacing.20");
+}
+.section-py-compact {
+  padding-top: theme("spacing.16");
+  padding-bottom: theme("spacing.16");
+}
+.section-py-emphasis {
+  padding-top: theme("spacing.24");
+  padding-bottom: theme("spacing.24");
+}
+
+@media (min-width: theme("screens.sm")) {
+  .section-py-hero {
+    padding-top: theme("spacing.28");
+    padding-bottom: theme("spacing.28");
+  }
+  .section-py-regular {
+    padding-top: theme("spacing.24");
+    padding-bottom: theme("spacing.24");
+  }
+  .section-py-compact {
+    padding-top: theme("spacing.20");
+    padding-bottom: theme("spacing.20");
+  }
+  .section-py-emphasis {
+    padding-top: theme("spacing.32");
+    padding-bottom: theme("spacing.32");
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  .section-py-hero {
+    padding-top: theme("spacing.32");
+    padding-bottom: theme("spacing.32");
+  }
+  .section-py-regular {
+    padding-top: theme("spacing.28");
+    padding-bottom: theme("spacing.28");
+  }
+  .section-py-compact {
+    padding-top: theme("spacing.24");
+    padding-bottom: theme("spacing.24");
+  }
+  .section-py-emphasis {
+    padding-top: theme("spacing.36");
+    padding-bottom: theme("spacing.36");
+  }
+}
+
 ::selection {
   background: rgba(31, 58, 46, 0.18);
   color: #1A1F1C;
