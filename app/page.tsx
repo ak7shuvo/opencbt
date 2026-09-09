@@ -28,7 +28,7 @@ const principles = [
   {
     number: "01",
     title: "Community first",
-    text: "Tourism should create opportunity for the people who call a destination home.",
+    text: "Tourism should create opportunity for the people who call a destination home — with a focus on skills and enterprise for women and youth.",
   },
   {
     number: "02",
@@ -400,6 +400,38 @@ export default function Home() {
       </section>
 
       {/* =========================================================
+          GOVERNANCE
+      ========================================================== */}
+      <section className="section-bleed border-y border-forest/10 bg-sand">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:items-center">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-forest/50">
+                Who decides
+              </p>
+              <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">
+                Owned and run
+                <br />
+                by the <span className="italic text-forest/55">community.</span>
+              </h2>
+            </div>
+
+            <div>
+              <p className="max-w-2xl text-sm leading-7 text-ink/60 sm:text-base">
+                Each participating village takes part through its own
+                community leadership, modelled on a Destination Management
+                Committee — deciding together how homestays are run, how
+                visitor numbers are kept sustainable, and how tourism income
+                is shared and reinvested. Every homestay and experience is
+                vetted by the community itself, so visits stay both safe for
+                travellers and true to local life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
           COMMUNITY
       ========================================================== */}
       <section className="section-bleed bg-sand">
@@ -465,6 +497,12 @@ export default function Home() {
                     <br />
                     that feels like home.
                   </h3>
+
+                  <p className="mt-3 max-w-xs text-sm leading-6 text-forest/70">
+                    Each village keeps only a handful of homestays open at a
+                    time, by design — small enough to stay personal, and to
+                    keep the experience genuine for both sides.
+                  </p>
 
                   <span className="mt-6 inline-block text-sm text-forest/60 transition-transform duration-300 group-hover:translate-x-1">
                     Discover homestays →
@@ -571,6 +609,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 text-xs italic text-ink/40">
+            In line with the UN Sustainable Development Goals — poverty
+            reduction, gender equality, decent work, and climate action.
+          </p>
         </div>
       </section>
 
