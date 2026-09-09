@@ -31,3 +31,4 @@ Thumbs.db
 
 # local backups
 .backup-*/
+tsconfig.tsbuildinfo
